@@ -1,17 +1,134 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Calculadora avançada
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content padding>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+
+  <ion-item>
+    <ion-input [(ngModel)]="valor" disabled>{{visorCalculadora}}</ion-input>
+  </ion-item>
+
+  <!-- <ion-item>
+    <ion-input disabled>{{visorOperador}}</ion-input>
+  </ion-item> -->
+  
+  <ion-grid id="mitologico">
+    <ion-row>
+      <ion-col size="3">
+        <div>
+          <ion-button (click)="clicou('7')" id="btn-size-7" color="dark">7</ion-button>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div>
+          <ion-button (click)="clicou('8')" id="btn-size-8" color="dark">8</ion-button>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div>
+          <ion-button (click)="clicou('9')" id="btn-size-9" color="dark">9</ion-button>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div>
+          <ion-button  (click)="armazenar()" (click)="clear('')" (click)="op('X')" id="btn-size-vezes" color="primary">x</ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <div>
+          <ion-button (click)="clicou('4')" id="btn-size-4" color="dark">4</ion-button>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div>
+          <ion-button (click)="clicou('5')" id="btn-size-5" color="dark">5</ion-button>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div>
+          <ion-button (click)="clicou('6')" id="btn-size-6" color="dark">6</ion-button>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div>
+          <ion-button  (click)="armazenar()" (click)="clear('')" (click)="op('-')" id="btn-size-menos" color="primary">-</ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <div>
+          <ion-button (click)="clicou('1')" id="btn-size-1" color="dark">1</ion-button>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div>
+          <ion-button (click)="clicou('2')" id="btn-size-2" color="dark">2</ion-button>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div>
+          <ion-button (click)="clicou('3')" id="btn-size-3" color="dark">3</ion-button>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div>
+          <ion-button  (click)="armazenar()"  (click)="clear('')" (click)="op('+')" id="btn-size-mais" color="primary">+</ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="6">
+        <div>
+          <ion-button (click)="clicou('0')" id="btn-size-0" color="dark">0</ion-button>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div>
+          <ion-button id="btn-size-virgula" (click)="clicou('.')" color="dark">.</ion-button>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div>
+          <ion-button (click)="armazenar()" (click)="clear('')" (click)="op('/')" id="btn-size-dividir" color="primary">/</ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="6">
+        <div>
+          <ion-button id="btn-size-clear" color="danger" (click)="clearAll('')">C</ion-button>
+        </div>
+      </ion-col>
+
+      <ion-col size="6">
+        <div>
+          <ion-button (click)="acao()" id="btn-size-igual" color="primary">=</ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
 </ion-content>

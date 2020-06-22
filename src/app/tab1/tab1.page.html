@@ -1,17 +1,42 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Calculadora
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-item>
+    <ion-label position="floating">Digite o 1º Número: </ion-label>
+    <ion-input [(ngModel)]="n1"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Digite o 2º Número: </ion-label>
+    <ion-input [(ngModel)]="n2"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-button (click)="fnSoma()" id="button-size" color="primary" size="default">+</ion-button>
+    <ion-button (click)="fnSub()" id="button-size" color="primary" size="default">-</ion-button>
+  </ion-item>
+
+  <ion-item>
+    <ion-button (click)="fnMult()" id="button-size" color="primary" size="default">*</ion-button>
+    <ion-button (click)="fnDiv()" id="button-size" color="primary" size="default">/</ion-button>
+  </ion-item>
+
+  <ion-item>
+    <ion-button (click)="fnIgual()" id="button-size" color="primary" size="default">=</ion-button>
+    <ion-button (click)="fnClear()" id="button-size" color="primary" size="default">Limpar</ion-button>
+  </ion-item>
+
+  <ion-item>
+    <p>Resultado: {{resultadoFinal}}</p>
+  </ion-item>
+
+
+
 </ion-content>
